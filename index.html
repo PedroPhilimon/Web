@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Urbano - Define tu estilo | Ropa y Accesorios</title>
+    <link rel="stylesheet" href="/css_styles/styles.css"> 
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="light-mode"> 
+
+    <header class="main-header">
+        <div class="header-top container">
+            <h1 class="logo">@ Tienda Urbano</h1>
+            
+            <button class="menu-toggle" aria-label="Abrir Menú de Navegación">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="header-actions">
+                <div class="search-bar">
+                    <input type="search" placeholder="Buscar Productos..." aria-label="Buscar Productos">
+                    <button type="submit" aria-label="Botón de Búsqueda"><i class="fas fa-search"></i></button>
+                </div>
+                
+                <div class="user-icons">
+                    <button id="darkModeToggle" class="icon-link dark-mode-toggle" aria-label="Alternar Modo Oscuro">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    
+                    <a href="#" class="icon-link wishlist-icon" aria-label="Lista de Deseos">
+                        <i class="fas fa-heart"></i>
+                        <span class="badge" data-count="12">12</span>
+                    </a>
+                    
+                    <a href="login.html" class="icon-link user-profile" aria-label="Iniciar Sesión o Perfil de Usuario">
+                        <i class="fas fa-user-circle"></i>
+                        <span class="desktop-only">Iniciar Sesión</span>
+                    </a>
+                    
+                    <a href="#" class="icon-link cart-icon" aria-label="Carrito de Compras">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge" data-count="2">2</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav"> 
+            <a href="index.html" class="nav-item active">Productos</a>
+            <a href="#" class="nav-item">Ofertas</a>
+            <a href="#" class="nav-item">Jeans</a>
+            <a href="#" class="nav-item">Verano</a>
+            <a href="#" class="nav-item">Invierno</a>
+            <a href="#" class="nav-item">Envío</a>
+            <a href="#" class="nav-item">Devoluciones y Garantía</a>
+            <a href="#" class="nav-item">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content container">
+                <h2 class="hero-title">Define tu estilo con Tienda Urbano.</h2>
+                <p class="hero-subtitle">Diseños modernos y cómodos que se adaptan a tu ritmo. Encuentra las últimas tendencias en ropa, accesorios y calzado que tu estilo te define.</p>
+                <div class="hero-actions">
+                    <a href="#" class="button button-primary">Ver Ofertas</a>
+                    <a href="#" class="button button-secondary">Ver Productos</a>
+                </div>
+            </div>
+            
+            <div class="carousel-indicators container">
+                <span class="dot active" data-slide-to="0" aria-label="Diapositiva 1 de 3"></span>
+                <span class="dot" data-slide-to="1" aria-label="Diapositiva 2 de 3"></span>
+                <span class="dot" data-slide-to="2" aria-label="Diapositiva 3 de 3"></span>
+            </div>
+            
+            <div class="category-grid container">
+                <a href="#" class="category-card" style="background-image: url('https://estilozahari.com/wp-content/uploads/2024/05/IMAGE-830x1024.png');">
+                    <span class="category-name">Productos</span>
+                </a>
+                <a href="#" class="category-card" style="background-image: url('https://img.freepik.com/fotos-premium/feliz-mujer-joven-sonriente-posando-letrero-venta_380164-242350.jpg?semt=ais_hybrid&w=740&q=80');">
+                    <span class="category-name">Ofertas %</span>
+                </a>
+                <a href="#" class="category-card" style="background-image: url('https://scontent.fscl6-1.fna.fbcdn.net/v/t39.30808-6/346638679_6231956670226394_8619967664172341861_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=3jfMl-KPOGgQ7kNvwGjvGV3&_nc_oc=Adl0bGaJsVWO-hP97hlcsEovBkipuC_c6VXKnjdTobbqD4oZVrxaa0Bu7P5rWjHyNcs&_nc_zt=23&_nc_ht=scontent.fscl6-1.fna&_nc_gid=JlNB9FwM-E91YP25CWNboQ&oh=00_AflAuF1Zn0KuLCAwRgOU2X_n1oyKGEICnM6knUC1-M7w4Q&oe=6939284B');">
+                    <span class="category-name">Verano</span>
+                </a>
+                <a href="#" class="category-card" style="background-image: url('https://img.freepik.com/foto-gratis/mujer-moda-joven-mujer_1303-1947.jpg?semt=ais_hybrid&w=740&q=80');">
+                    <span class="category-name">Invierno</span>
+                </a>
+            </div>
+        </section>
+        
+        <section class="product-showcase container" aria-labelledby="summer-offers-heading">
+            <div class="list-header">
+                <h3 id="summer-offers-heading">🔥 Ofertas de Verano</h3>
+                <a href="#" class="browse-all">Ver Todos los Productos <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="product-carousel">
+                <button class="carousel-nav prev" aria-label="Producto Anterior"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-nav next" aria-label="Siguiente Producto"><i class="fas fa-chevron-right"></i></button>
+
+                <div class="product-card" data-is-new="true"> 
+                    <a href="/detail_product_mini_falda.html" aria-label="Ver detalles de Mini falda globo">
+                        <img src="https://www.tricot.cl/dw/image/v2/BGHZ_PRD/on/demandware.static/-/Sites-master-catalog-tricot/default/dwa367d6d8/images/large/MD685382.jpg?sw=2000&sh=2000&sm=fit&q=80&strip=false" alt="Mini falda globo">
+                    </a>
+                    <div class="product-info">
+                        <p class="product-title"><a href="#">Mini falda globo</a></p>
+                        <p class="product-details">Color negro, Talla XS - L</p>
+                        <p class="product-price">$6.990</p>
+                        <button href="/Detail_mini_falda_globo/detail_product.html" class="add-to-cart-btn" aria-label="Añadir Mini falda globo al carrito"><i class="fas fa-shopping-cart"></i></button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <a href="/detail_product_enterito_tencel.html" aria-label="Ver detalles de Enterito mujer tencel">
+                        <img src="https://www.tricot.cl/dw/image/v2/BGHZ_PRD/on/demandware.static/-/Sites-master-catalog-tricot/default/dw173ff2ec/images/large/MD685781.jpg?sw=2000&sh=2000&sm=fit&q=80&strip=false" alt="Enterito mujer tencel">
+                    </a>
+                    <div class="product-info">
+                        <p class="product-title"><a href="#">Enterito mujer tencel</a></p>
+                        <p class="product-details">Color celeste, Talla S - XL</p>
+                        <p class="product-price">$9.990</p>
+                        <button class="add-to-cart-btn" aria-label="Añadir Enterito mujer tencel al carrito"><i class="fas fa-shopping-cart"></i></button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <a href="/detail_product_blusa_wrinkled.html" aria-label="Ver detalles de Blusa mujer wrinkled">
+                        <img src="https://www.tricot.cl/dw/image/v2/BGHZ_PRD/on/demandware.static/-/Sites-master-catalog-tricot/default/dw5de53964/images/large/MD648286-5.jpg?sw=2000&sh=2000&sm=fit&q=80&strip=false" alt="Blusa mujer wrinkled">
+                    </a>
+                    <div class="product-info">
+                        <p class="product-title"><a href="#">Blusa mujer wrinkled</a></p>
+                        <p class="product-details">Color blanco, Talla XS - L</p>
+                        <p class="product-price">$4.990</p>
+                        <button class="add-to-cart-btn" aria-label="Añadir Blusa mujer wrinkled al carrito"><i class="fas fa-shopping-cart"></i></button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <a href="/detail_product_vest_lineas.html" aria-label="Ver detalles de Vest mujer líneas">
+                        <img src="https://www.tricot.cl/dw/image/v2/BGHZ_PRD/on/demandware.static/-/Sites-master-catalog-tricot/default/dw0250e345/images/large/MD685054.jpg?sw=400&sh=400&sm=fit&q=80&strip=false" alt="Vest mujer líneas">
+                    </a>
+                    <div class="product-info">
+                        <p class="product-title"><a href="#">Vest mujer líneas</a></p>
+                        <p class="product-details">Color blanco, Talla XS - XL</p>
+                        <p class="product-price">$7.990</p>
+                        <button class="add-to-cart-btn" aria-label="Añadir Vest mujer líneas al carrito"><i class="fas fa-shopping-cart"></i></button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <a href="#" aria-label="Ver detalles de Pareo mujer mix Colores">
+                        <img src="https://www.tricot.cl/dw/image/v2/BGHZ_PRD/on/demandware.static/-/Sites-master-catalog-tricot/default/dw615c80da/images/large/MD643756.jpg?sw=2000&sh=2000&sm=fit&q=80&strip=false" alt="Pareo mujer mix Colores">
+                    </a>
+                    <div class="product-info">
+                        <p class="product-title"><a href="#">Pareo mujer mix Colores</a></p>
+                        <p class="product-details">Talla XL</p>
+                        <p class="product-price">$5.990</p>
+                        <button class="add-to-cart-btn" aria-label="Añadir Pareo mujer mix Colores al carrito"><i class="fas fa-shopping-cart"></i></button>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        
+        <section class="season-banners container">
+            <a href="#" class="season-card banner-verano" aria-label="Ver ofertas de Verano">
+                <div class="banner-content">
+                    <span class="tag">Verano</span>
+                    <span class="tag-top">TOP</span>
+                    <div class="discount">25%</div>
+                    <p class="limited">productos limitados</p>
+                </div>
+            </a>
+            <a href="#" class="season-card banner-invierno" aria-label="Ver ofertas de Invierno">
+                <div class="banner-content">
+                    <span class="tag">Invierno</span>
+                    <span class="tag-top">UP TO</span>
+                    <div class="discount">50%</div>
+                    <p class="limited">productos limitados</p>
+                </div>
+            </a>
+        </section>
+        
+        <section class="product-showcase container" aria-labelledby="new-products-heading">
+            <div class="list-header">
+                <h3 id="new-products-heading">✨ Nuevos Productos</h3>
+                <a href="#" class="browse-all">Ver Todos los Productos <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="product-carousel">
+                <button class="carousel-nav prev" aria-label="Producto Anterior"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-nav next" aria-label="Siguiente Producto"><i class="fas fa-chevron-right"></i></button>
+                
+                <div class="product-card" data-is-sale="true">
+                    <a href="#" aria-label="Ver detalles de Blusa mujer diseño rayas">
+                        <img src="https://www.tricot.cl/dw/image/v2/BGHZ_PRD/on/demandware.static/-/Sites-master-catalog-tricot/default/dwfac1dca8/images/large/MD686200.jpg?sw=2000&sh=2000&sm=fit&q=80&strip=false" alt="Blusa mujer diseño rayas">
+                    </a>
+                    <div class="product-info">
+                        <p class="product-title"><a href="#">Blusa mujer diseño rayas</a></p>
+                        <p class="product-details">Color blanco, Talla S - L</p>
+                        <div class="price-group">
+                            <span class="product-price-old">$6.990</span>
+                            <span class="product-price sale-price">$6.390</span>
+                        </div>
+                        <span class="sale-tag">-20%</span>
+                        <button class="add-to-cart-btn" aria-label="Añadir Blusa mujer diseño rayas al carrito"><i class="fas fa-shopping-cart"></i></button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <a href="#" aria-label="Ver detalles de Enterito mujer cinturón">
+                        <img src="https://www.tricot.cl/dw/image/v2/BGHZ_PRD/on/demandware.static/-/Sites-master-catalog-tricot/default/dw8cb6f9b7/images/large/MD686147.jpg?sw=2000&sh=2000&sm=fit&q=80&strip=false" alt="Enterito mujer cinturón">
+                    </a>
+                    <div class="product-info">
+                        <p class="product-title"><a href="#">Enterito mujer cinturón</a></p>
+                        <p class="product-details">Color café, Talla S - L</p>
+                        <p class="product-price">$12.990</p>
+                        <button class="add-to-cart-btn" aria-label="Añadir Enterito mujer cinturón al carrito"><i class="fas fa-shopping-cart"></i></button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <a href="#" aria-label="Ver detalles de Vestido mujer puntos">
+                        <img src="https://www.tricot.cl/dw/image/v2/BGHZ_PRD/on/demandware.static/-/Sites-master-catalog-tricot/default/dw82563826/images/large/MD686197.jpg?sw=2000&sh=2000&sm=fit&q=80&strip=false" alt="Vestido mujer puntos">
+                    </a>
+                    <div class="product-info">
+                        <p class="product-title"><a href="#">Vestido mujer puntos</a></p>
+                        <p class="product-details">Color blanco, Talla S - XL</p>
+                        <p class="product-price">$11.990</p>
+                        <button class="add-to-cart-btn" aria-label="Añadir Vestido mujer puntos al carrito"><i class="fas fa-shopping-cart"></i></button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <a href="#" aria-label="Ver detalles de Pantalón mujer palazzo">
+                        <img src="https://www.tricot.cl/dw/image/v2/BGHZ_PRD/on/demandware.static/-/Sites-master-catalog-tricot/default/dwc6e1fb81/images/large/MD561471.jpg?sw=2000&sh=2000&sm=fit&q=80&strip=false" alt="Pantalón mujer palazzo">
+                    </a>
+                    <div class="product-info">
+                        <p class="product-title"><a href="#">Pantalón mujer palazzo</a></p>
+                        <p class="product-details">Color rosado, Talla S - L</p>
+                        <p class="product-price">$23.990</p>
+                        <button class="add-to-cart-btn" aria-label="Añadir Pantalón mujer palazzo al carrito"><i class="fas fa-shopping-cart"></i></button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <a href="#" aria-label="Ver detalles de Chaqueta mujer lino cargo">
+                        <img src="https://www.tricot.cl/dw/image/v2/BGHZ_PRD/on/demandware.static/-/Sites-master-catalog-tricot/default/dw40db59a0/images/large/MD648159.jpg?sw=2000&sh=2000&sm=fit&q=80&strip=false" alt="Chaqueta mujer lino cargo">
+                    </a>
+                    <div class="product-info">
+                        <p class="product-title"><a href="#">Chaqueta mujer lino cargo</a></p>
+                        <p class="product-details">Color beige, Talla S - XL</p>
+                        <p class="product-price">$28.990</p>
+                        <button class="add-to-cart-btn" aria-label="Añadir Chaqueta mujer lino cargo al carrito"><i class="fas fa-shopping-cart"></i></button>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section class="jeans-banner container">
+            <div class="banner-content">
+                <p>HASTA 50% DCTO EN JEANS</p>
+                <div class="discount-large">50%</div>
+                <p>Productos Seleccionados</p>
+                <a href="#" class="button button-primary">Ver Jeans Ahora</a>
+            </div>
+        </section>
+
+        <section class="subscription-section">
+            <div class="subscription-content container">
+                <h4>Suscríbete y Obtén un 5% de Descuento</h4>
+                <p>Suscripción mensual. Recibe las últimas actualizaciones de productos y ofertas especiales directamente en tu bandeja de entrada</p>
+            </div>
+            <form class="subscription-form container">
+                <input type="email" placeholder="Ingresa tu email" required aria-label="Correo Electrónico para Suscripción">
+                <button type="submit" class="button-subscribe">SUSCRIBIRTE</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="main-footer container">
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h5>Ayuda?</h5>
+                <a href="#" class="contact-button">Contáctanos</a>
+            </div>
+            <div class="footer-column">
+                <h5>Soporte</h5>
+                <ul>
+                    <li><a href="#">Devoluciones y Garantía</a></li>
+                    <li><a href="#">Métodos de pago</a></li>
+                    <li><a href="#">Envíos</a></li>
+                    <li><a href="#">Términos y privacidad</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h5>Info</h5>
+                <ul>
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#">Compañías</a></li>
+                    <li><a href="#">Afiliados</a></li>
+                    <li><a href="#">Investors</a></li>
+                    <li><a href="#">Cookies</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h5>Membresías y Regalos</h5>
+                <ul>
+                    <li><a href="#">Comprar Gift Cards</a></li>
+                    <li><a href="#">Suscripción</a></li>
+                    <li><a href="#">Mensual</a></li>
+                </ul>
+            </div>
+            <div class="footer-column location">
+                <h5>Ubicación</h5>
+                <select aria-label="Seleccionar País">
+                    <option value="chile">Chile</option>
+                    <option value="peru">Perú</option>
+                    <option value="mexico">México</option>
+                </select>
+            </div>
+        </div>
+        <div class="social-media">
+            <a href="#" aria-label="Síguenos en Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Síguenos en Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Síguenos en Youtube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="Síguenos en Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Tienda Urbano. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
