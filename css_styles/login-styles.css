@@ -1,0 +1,254 @@
+/* Importar fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* =========================================
+   0. Variables Globales, Reset y Animación de Entrada
+   ========================================= */
+:root {
+    /* Paleta de colores principal (Solo Light Mode) */
+    --primary-color: #A573F0; /* Morado Elegante */
+    --primary-dark: #8E5ACB; 
+    --secondary-color: #4A4A4A;
+    
+    --bg-primary: #FFFFFF; 
+    --bg-secondary: #F9F7F9; 
+    --text-color: #2D2D2D; 
+    --text-subtle: #8A8A8A; 
+    --border-color: #E0E0E0; 
+    --shadow-base: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
+    --transition-speed: 0.3s;
+}
+
+/* Keyframes para la transición de entrada */
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    background-color: var(--bg-secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color var(--transition-speed);
+}
+a:hover {
+    color: var(--primary-dark);
+}
+button {
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+}
+
+/* =========================================
+   1. Contenedor Principal (Login)
+   ========================================= */
+.login-container {
+    background-color: var(--bg-primary);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-base);
+    width: 100%;
+    max-width: 420px;
+    position: relative;
+    border: 1px solid var(--border-color);
+    
+    /* APLICACIÓN DE LA TRANSICIÓN DE ENTRADA */
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+}
+
+/* Header del Formulario */
+.login-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo-small {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: -1px;
+}
+
+/* Botón de Modo Oscuro (Eliminado en HTML, se borran las reglas si existían) */
+
+/* =========================================
+   2. Formulario
+   ========================================= */
+.login-form {
+    text-align: center;
+}
+
+.form-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.form-subtitle {
+    color: var(--text-subtle);
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: var(--text-color);
+    transition: color var(--transition-speed); /* Para el dinamismo JS */
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: var(--bg-secondary);
+    color: var(--text-color);
+    outline: none;
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.input-group input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(165, 115, 240, 0.2);
+    background-color: var(--bg-primary); 
+}
+/* Clase de Dinamismo JS */
+.input-group.active label {
+    color: var(--primary-color);
+}
+.input-group.active input {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(165, 115, 240, 0.2);
+}
+
+/* Link de contraseña olvidada */
+.forgot-password {
+    display: block;
+    text-align: right;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+/* Botones de Acción */
+.button {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    border-radius: 30px; 
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    margin-top: 20px;
+    border: none;
+}
+
+.button-primary {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    box-shadow: 0 4px 10px rgba(165, 115, 240, 0.4);
+}
+.button-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Separador (O) */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 25px 0;
+    color: var(--text-subtle);
+    font-size: 0.85rem;
+}
+.divider::before,
+.divider::after {
+    content: '';
+    flex-grow: 1;
+    height: 1px;
+    background: var(--border-color);
+    margin: 0 10px;
+}
+
+/* Botón de Redes Sociales */
+.button-social {
+    background-color: var(--bg-primary);
+    color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    box-shadow: none;
+    margin-top: 0;
+}
+.button-social:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background-color: var(--bg-primary);
+}
+.button-social .fab {
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+/* Link de Registro */
+.register-link {
+    margin-top: 25px;
+    font-size: 0.9rem;
+    color: var(--text-subtle);
+}
+.register-link a {
+    font-weight: 500;
+}
+
+
+/* =========================================
+   3. Responsividad Móvil
+   ========================================= */
+@media (max-width: 500px) {
+    .login-container {
+        padding: 30px 25px;
+        margin: 20px;
+        max-width: 90%;
+    }
+    .form-title {
+        font-size: 1.6rem;
+    }
+}

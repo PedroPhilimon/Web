@@ -1,0 +1,312 @@
+/* Importar fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* =========================================
+   0. Variables Globales y Reset
+   ========================================= */
+:root {
+    --primary-color: #A573F0;
+    --primary-dark: #8E5ACB; 
+    --secondary-color: #4A4A4A;
+    
+    --bg-primary: #FFFFFF; 
+    --bg-secondary: #F9F7F9; 
+    --text-color: #2D2D2D; 
+    --text-subtle: #8A8A8A; 
+    --border-color: #E0E0E0; 
+    --shadow-base: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Montserrat', sans-serif;
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    background-color: var(--bg-primary);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color var(--transition-speed);
+}
+a:hover {
+    color: var(--primary-color);
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+/* =========================================
+   1. Estructura Principal
+   ========================================= */
+.product-detail-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.product-info-panel {
+    padding-top: 20px;
+}
+
+/* =========================================
+   2. Galería de Imágenes
+   ========================================= */
+.main-image {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    box-shadow: var(--shadow-base);
+}
+.main-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.thumbnails {
+    display: flex;
+    gap: 10px;
+}
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: border-color var(--transition-speed);
+}
+.thumbnail.active, .thumbnail:hover {
+    border-color: var(--primary-color);
+}
+
+/* =========================================
+   3. Panel de Información
+   ========================================= */
+.breadcrumb {
+    font-size: 0.85rem;
+    color: var(--text-subtle);
+    margin-bottom: 20px;
+}
+.breadcrumb a {
+    color: var(--text-subtle);
+    margin-right: 5px;
+}
+.breadcrumb span {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.product-title {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.product-ref {
+    font-size: 0.8rem;
+    color: var(--text-subtle);
+    margin-bottom: 15px;
+}
+
+.rating-review {
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+.stars {
+    color: #FFC107;
+    margin-right: 5px;
+}
+.reviews {
+    color: var(--text-subtle);
+}
+
+.product-price-display {
+    padding: 15px 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 25px;
+}
+.current-price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.product-description {
+    margin-bottom: 30px;
+    color: var(--secondary-color);
+}
+
+/* Opciones (Color y Talla) */
+.options-group {
+    margin-bottom: 25px;
+}
+.options-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.size-guide-link {
+    font-size: 0.9rem;
+    margin-left: 10px;
+    color: var(--primary-color);
+}
+
+/* Colores */
+.color-options {
+    display: flex;
+    gap: 10px;
+}
+.color-swatch {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+    cursor: pointer;
+    transition: transform var(--transition-speed), border-color var(--transition-speed);
+}
+.color-swatch.active {
+    border-color: var(--primary-color);
+    transform: scale(1.1);
+}
+.black { background-color: #309bad; }
+.white { background-color: #FFF; }
+.beige { background-color: #D2B48C; }
+
+/* Tallas */
+.size-options {
+    display: flex;
+    gap: 10px;
+}
+.size-btn {
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--bg-secondary);
+    font-weight: 500;
+    transition: background-color var(--transition-speed), border-color var(--transition-speed), color var(--transition-speed);
+}
+.size-btn.active, .size-btn:hover {
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+}
+
+/* Acciones de Compra */
+.purchase-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.quantity-control {
+    display: flex;
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    overflow: hidden;
+}
+.qty-btn {
+    padding: 10px 15px;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+.qty-input {
+    width: 40px;
+    text-align: center;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+.button {
+    padding: 14px 25px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button-primary {
+    flex-grow: 1;
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    transition: background-color var(--transition-speed);
+}
+.button-primary:hover {
+    background-color: var(--primary-dark);
+}
+.button-secondary {
+    padding: 14px;
+    width: 50px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+.button-secondary:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.delivery-info {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: var(--text-subtle);
+}
+.delivery-info .fas {
+    margin-right: 5px;
+    color: var(--primary-color);
+}
+
+/* =========================================
+   4. Responsividad
+   ========================================= */
+@media (max-width: 1024px) {
+    .product-detail-main {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+    .product-title {
+        font-size: 2.2rem;
+    }
+    .purchase-actions {
+        flex-wrap: wrap;
+    }
+    .add-to-cart-lg {
+        flex-grow: 1;
+        width: 100%;
+        order: -1;
+        margin-bottom: 10px;
+    }
+    .quantity-control {
+        flex-grow: 1;
+    }
+    .button-secondary {
+        width: 100%;
+        flex-grow: 1;
+    }
+}

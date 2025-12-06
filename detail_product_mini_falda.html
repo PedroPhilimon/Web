@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de Producto | Mini falda globo | Tienda Urbano</title>
+    
+    <link rel="stylesheet" href="/css_styles/detail_product-styles.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="light-mode"> 
+    
+    <main class="container product-detail-main">
+        <section class="product-gallery">
+            <div class="main-image">
+                <img src="https://www.tricot.cl/dw/image/v2/BGHZ_PRD/on/demandware.static/-/Sites-master-catalog-tricot/default/dwa367d6d8/images/large/MD685382.jpg?sw=2000&sh=2000&sm=fit&q=80&strip=false" 
+                     alt="Mini falda globo - Vista frontal" 
+                     id="productImage" 
+                     width="500" 
+                     height="650"> 
+            </div>
+            
+            <div class="thumbnails" id="productThumbnails">
+                <img src="https://www.tricot.cl/dw/image/v2/BGHZ_PRD/on/demandware.static/-/Sites-master-catalog-tricot/default/dwa367d6d8/images/large/MD685382.jpg?sw=2000&sh=2000&sm=fit&q=80&strip=false" 
+                     alt="Miniatura 1" class="thumbnail active" width="80" height="80" loading="lazy">
+                
+                <img src="https://www.tricot.cl/dw/image/v2/BGHZ_PRD/on/demandware.static/-/Sites-master-catalog-tricot/default/dw650678dc/images/large/MD685382-4.jpg?sw=2000&sh=2000&sm=fit&q=80&strip=false" 
+                     alt="Miniatura 2" class="thumbnail" width="80" height="80" loading="lazy">
+                
+                <img src="https://www.tricot.cl/dw/image/v2/BGHZ_PRD/on/demandware.static/-/Sites-master-catalog-tricot/default/dwc6eee2be/images/large/MD685382-3.jpg?sw=2000&sh=2000&sm=fit&q=80&strip=false" 
+                     alt="Miniatura 3" class="thumbnail" width="80" height="80" loading="lazy">
+            </div>
+        </section>
+
+        <section class="product-info-panel">
+            <nav class="breadcrumb">
+                <a href="index.html">Inicio</a> / <a href="#" id="categoryBreadcrumb">Verano</a> / <span id="productTitleBreadcrumb">Mini falda globo</span>
+            </nav>
+            
+            <h1 class="product-title" id="productTitle">Mini falda globo</h1>
+            <p class="product-ref" id="productRef">Ref: SK001-N</p>
+            
+            <div class="rating-review">
+                <span class="stars" id="productRating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                </span>
+                <span class="reviews" id="reviewCount">(150 Reviews)</span>
+            </div>
+
+            <div class="product-price-display">
+                <span class="current-price" id="currentPrice">$6.990</span>
+            </div>
+
+            <div class="product-description">
+                <p id="productDescription">La Mini falda globo es la prenda perfecta para un look urbano y fresco. Su diseño de volumen y tela ligera te ofrece comodidad sin sacrificar el estilo. Ideal para combinar con tops ajustados o blusas casuales.</p>
+            </div>
+
+            <div class="options-group">
+                <label for="color">Color:</label>
+                <div class="color-options" id="colorOptions">
+                    <span class="color-swatch active black" data-color="black"></span>
+                    <span class="color-swatch white" data-color="white"></span>
+                </div>
+            </div>
+
+            <div class="options-group">
+                <label for="size">Talla: <a href="#" class="size-guide-link">Guía de Tallas</a></label>
+                <div class="size-options" id="sizeOptions">
+                    <button class="size-btn active">XS</button>
+                    <button class="size-btn">S</button>
+                    <button class="size-btn">M</button>
+                    <button class="size-btn">L</button>
+                </div>
+            </div>
+            
+            <div class="purchase-actions">
+                <div class="quantity-control">
+                    <button class="qty-btn decrement">-</button>
+                    <input type="number" value="1" min="1" max="10" class="qty-input">
+                    <button class="qty-btn increment">+</button>
+                </div>
+                
+                <button class="button button-primary add-to-cart-lg">
+                    <i class="fas fa-shopping-cart"></i> AÑADIR AL CARRITO
+                </button>
+                <button class="button button-secondary add-to-wishlist">
+                    <i class="fas fa-heart"></i>
+                </button>
+            </div>
+
+            <div class="delivery-info">
+                <p><i class="fas fa-truck"></i> Envío rápido a todo Chile. **Devoluciones fáciles en 30 días.**</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="/js/detail_product-script.js"></script>
+</body>
+</html>

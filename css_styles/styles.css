@@ -1,0 +1,1087 @@
+/* Importar fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* =========================================
+   0. Variables Globales y Reset (Light Mode)
+   ========================================= */
+:root {
+    /* Paleta de colores principal */
+    --primary-color: #A573F0; /* Morado Elegante */
+    --primary-dark: #8E5ACB; 
+    --secondary-color: #4A4A4A; /* Gris oscuro para texto principal */
+    --sale-color: #E74C3C; /* Rojo para ofertas */
+    
+    /* Colores del Modo CLARO (Light Mode) */
+    --bg-primary: #FFFFFF; /* Fondo principal (blanco) */
+    --bg-secondary: #F9F7F9; /* Fondo secundario/secciones (gris muy claro) */
+    --text-color: #2D2D2D; /* Texto oscuro */
+    --text-subtle: #8A8A8A; /* Texto sutil/detalles */
+    --border-color: #E0E0E0; /* Bordes */
+    --shadow-base: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
+    --transition-speed: 0.3s;
+}
+
+/* =========================================
+   0.1. Variables del Modo OSCURO (Dark Mode)
+   ========================================= */
+body.dark-mode {
+    --bg-primary: #121212; /* Fondo principal oscuro */
+    --bg-secondary: #1E1E1E; /* Fondo secundario/secciones más oscuro */
+    --text-color: #EAEAEA; /* Texto claro */
+    --text-subtle: #B3B3B3; /* Texto sutil claro */
+    --border-color: #333333; /* Bordes sutiles oscuros */
+    --shadow-base: 0 4px 15px rgba(255, 255, 255, 0.05);
+}
+
+/* =========================================
+   0.2. Reset y Estilos Base
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    background-color: var(--bg-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+/* Contenedor central para limitar el ancho y centrar */
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 40px; 
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    transition: color var(--transition-speed);
+}
+a:hover {
+    color: var(--primary-color);
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    transition: color var(--transition-speed), background-color var(--transition-speed);
+}
+/* Estilos para el input en Dark Mode */
+body.dark-mode input[type="search"],
+body.dark-mode input[type="email"] {
+    color: var(--text-color);
+    background-color: var(--bg-secondary);
+}
+
+/* =========================================
+   1. Encabezado y Navegación
+   ========================================= */
+.main-header {
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0; 
+}
+.logo {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: -1px;
+}
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.user-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Búsqueda */
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 400px;
+    border: 1px solid var(--border-color);
+    border-radius: 25px;
+    overflow: hidden;
+    background-color: var(--bg-secondary);
+    transition: box-shadow var(--transition-speed), border-color var(--transition-speed);
+}
+.search-bar:focus-within {
+    box-shadow: 0 0 0 3px rgba(165, 115, 240, 0.2);
+    border-color: var(--primary-color);
+}
+.search-bar input {
+    border: none;
+    padding: 10px 15px;
+    flex-grow: 1;
+    font-size: 0.95rem;
+    outline: none;
+    background: transparent;
+    color: var(--text-color);
+}
+.search-bar button {
+    padding: 10px 15px;
+    color: var(--secondary-color);
+    font-size: 1rem;
+}
+.search-bar button:hover {
+    color: var(--primary-color);
+}
+
+/* Iconos de usuario (Carrito, Perfil, Modo Oscuro) */
+.icon-link {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    position: relative;
+    padding: 5px;
+}
+.icon-link:hover {
+    color: var(--primary-color);
+}
+.icon-link .fas {
+    font-size: 1.3rem;
+    margin-right: 0;
+}
+.badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: var(--sale-color);
+    color: #FFFFFF;
+    border-radius: 50%;
+    padding: 3px 6px;
+    font-size: 0.7rem;
+    line-height: 1;
+    font-weight: 500;
+}
+/* Estilo del botón de modo oscuro */
+.dark-mode-toggle .fas {
+    color: var(--text-subtle);
+}
+.dark-mode-toggle:hover .fas {
+    color: var(--primary-color);
+    transform: rotate(15deg);
+}
+body.dark-mode .dark-mode-toggle .fas {
+    content: "\f185"; /* Cambia la luna por un sol en modo oscuro */
+    color: #FFD700; 
+}
+/* Ocultar elementos en móvil */
+.menu-toggle, .desktop-only {
+    display: none;
+}
+
+/* Navegación Principal */
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    padding: 10px 0;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border-top: 1px solid var(--border-color);
+}
+.main-nav a {
+    color: var(--text-color);
+    padding: 5px 0;
+    position: relative;
+}
+.nav-item.active,
+.nav-item:hover {
+    color: var(--primary-color);
+}
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width var(--transition-speed) ease-out, left var(--transition-speed) ease-out;
+}
+.nav-item:hover::after,
+.nav-item.active::after {
+    width: 100%;
+    left: 0;
+}
+
+/* =========================================
+   2. Hero Section y Categorías
+   ========================================= */
+.hero-section {
+    padding: 0 0 50px 0; 
+    text-align: center;
+}
+.hero-content {
+    max-width: 800px;
+    margin: 40px auto 30px;
+    padding: 0;
+}
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 3.8rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--text-color);
+}
+.hero-subtitle {
+    color: var(--text-subtle);
+    margin-bottom: 40px;
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+.hero-actions .button {
+    padding: 14px 40px;
+    border-radius: 30px; 
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    display: inline-block;
+    margin: 0 10px;
+    letter-spacing: 0.5px;
+}
+/* Botones */
+.button-primary {
+    background-color: var(--primary-color);
+    color: var(--bg-primary);
+    border: 2px solid var(--primary-color);
+}
+.button-primary:hover {
+    background-color: var(--primary-dark);
+    box-shadow: var(--shadow-base);
+}
+.button-secondary {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 2px solid var(--border-color);
+}
+.button-secondary:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    box-shadow: var(--shadow-base);
+}
+
+/* Indicadores de Carrusel */
+.carousel-indicators {
+    text-align: center;
+    margin: 20px auto 40px;
+}
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: var(--border-color);
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 6px;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+}
+.dot.active {
+    background-color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+/* Grid de Categorías */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+.category-card {
+    height: 300px;
+    border-radius: 15px;
+    background-size: cover; 
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 25px;
+    font-weight: 600;
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-base);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+.category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Overlay más oscuro para el texto blanco */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
+    z-index: 1;
+    transition: background 0.5s ease;
+}
+.category-card:hover::before {
+     background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
+}
+.category-name {
+    z-index: 2;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================================
+   3. Listados de Productos (Showcase)
+   ========================================= */
+.product-showcase {
+    margin: 80px auto;
+}
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.list-header h3 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+.browse-all {
+    color: var(--primary-color);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.product-carousel {
+    display: flex; 
+    gap: 25px;
+    position: relative;
+    overflow-x: auto; 
+    padding-bottom: 20px;
+    scroll-behavior: smooth;
+    /* Ocultar barra de desplazamiento */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.product-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* Tarjeta de Producto */
+.product-card {
+    flex: 0 0 280px;
+    position: relative;
+    text-align: left;
+    background-color: var(--bg-primary);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color); /* Borde sutil */
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed), border-color var(--transition-speed);
+}
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-base);
+    border-color: var(--primary-color);
+}
+.product-card a {
+    display: block;
+}
+.product-card img {
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    transition: transform 0.5s ease;
+}
+.product-card:hover img {
+    transform: scale(1.05);
+}
+.product-info {
+    padding: 10px 15px 15px;
+    position: relative;
+    min-height: 120px; /* Altura mínima para alinear info */
+}
+.product-title a {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 3px;
+    color: var(--text-color);
+}
+.product-details {
+    color: var(--text-subtle);
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+}
+.product-price {
+    font-weight: 700;
+    color: var(--primary-dark);
+    font-size: 1.2rem;
+}
+.price-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.product-price-old {
+    text-decoration: line-through;
+    color: var(--text-subtle);
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-right: 10px;
+}
+.sale-price {
+    color: var(--sale-color);
+}
+/* Botón de añadir al carrito */
+.add-to-cart-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease, background-color var(--transition-speed);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.add-to-cart-btn:hover {
+    background-color: var(--primary-dark);
+    transform: scale(1.1);
+}
+
+/* Etiquetas (Badge) */
+[data-is-new="true"]::before {
+    content: 'NUEVO';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    z-index: 10;
+}
+.sale-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--sale-color);
+    color: #FFFFFF;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    z-index: 10;
+}
+/* Flechas de Navegación del Carrusel */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    transition: background-color var(--transition-speed), color var(--transition-speed), opacity var(--transition-speed);
+    opacity: 0; /* Oculto por defecto en desktop (aparece al hover del showcase) */
+}
+.product-showcase:hover .carousel-nav {
+    opacity: 1;
+}
+.carousel-nav:hover {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    border-color: var(--primary-color);
+}
+.carousel-nav.prev {
+    left: 10px;
+}
+.carousel-nav.next {
+    right: 10px;
+}
+/* Ocultar flechas en móvil */
+@media (max-width: 768px) {
+    .carousel-nav {
+        display: none;
+    }
+}
+
+
+/* =========================================
+   4. Banners de Estaciones
+   ========================================= */
+.season-banners {
+    margin: 50px auto;
+    display: flex;
+    gap: 30px;
+}
+.season-card {
+    flex: 1;
+    height: 400px;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end;
+    padding: 40px;
+    color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-base);
+    transition: transform 0.5s ease;
+}
+/* 🟢 IMAGEN DE FONDO: VERANO 🟢 */
+.banner-verano {
+    background-image: url('https://www.neo2.com/wp-content/uploads/2025/07/ropa-streetwear-playa-coleccion-verano-mujer_03.jpg');
+}
+/* 🟢 IMAGEN DE FONDO: INVIERNO 🟢 */
+.banner-invierno {
+    background-image: url('https://www.browniespain.com/img/brownie-campaign/06_ski/enlazado_interno.jpg?v=30251205102741');
+}
+/* Overlay para mejorar legibilidad del texto */
+.season-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1));
+    z-index: 1;
+    transition: background 0.5s ease;
+}
+.season-card:hover {
+    transform: scale(1.02);
+}
+.banner-content {
+    position: relative; 
+    z-index: 2; 
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
+    text-align: left;
+}
+.tag {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.tag-top {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.discount {
+    font-family: var(--font-heading);
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 0.8;
+}
+.limited {
+    font-size: 1.1rem;
+    font-style: italic;
+    font-weight: 300;
+}
+
+/* =========================================
+   5. Banner de Descuento en Jeans
+   ========================================= */
+.jeans-banner {
+    margin: 80px auto;
+    height: 450px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.jeans-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* 🟢 IMAGEN DE FONDO: JEANS 🟢 (Movida al pseudo-elemento) */
+    background-image: url('https://www.latercera.com/resizer/v2/EVGVKYPDUNDX3GWRUQNFI3XKW4.jpg?auth=5c7c0c40934ea63bf3bd397b7f2eef5e9499666355b7e09761e61cf418a34add&smart=true&width=800&height=450&quality=70'); 
+    background-size: cover;
+    background-position: center;
+    z-index: 0; /* Capa debajo del contenido */
+    
+    /* AÑADIMOS LA TRANSICIÓN SUAVE Y EL ESTADO BASE */
+    transform: scale(1);
+    transition: transform 3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Duración de 3s para un zoom muy suave y elegante */
+}
+
+.jeans-banner:hover::before {
+    transform: scale(1.05); /* Hacemos el zoom con transform */
+}
+
+
+.jeans-banner:hover {
+    background-size: 105%;
+}
+.jeans-banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+.jeans-banner .banner-content {
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+.jeans-banner .banner-content p {
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2; /* Capa superior para el texto */
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+.jeans-banner .discount-large {
+    font-family: var(--font-heading);
+    font-size: 10rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   6. Suscripción (CORREGIDO)
+   ========================================= */
+.subscription-section {
+    background-color: var(--bg-secondary);
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    border-top: 1px solid var(--border-color);
+}
+.subscription-content {
+    max-width: 550px;
+    text-align: center;
+}
+.subscription-content h4 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.subscription-content p {
+    font-size: 0.95rem;
+    color: var(--text-subtle);
+}
+.subscription-form {
+    display: flex;
+    align-items: stretch; /* CLAVE: Estira los elementos para que tengan la misma altura */
+    width: 100%;
+    max-width: 550px;
+    
+    /* Quitamos los bordes y sombras del contenedor */
+    /* border: 1px solid var(--border-color); */ 
+    background-color: transparent; 
+    box-shadow: none; 
+    
+    padding: 0 40px; /* Aumentamos el padding para separarlo de los bordes del contenedor principal en móvil/tablet */
+}
+
+.subscription-form input {
+    /* CORREGIDO: Aplicamos el borde y el fondo correcto aquí */
+    padding: 15px 20px;
+    border: 1px solid var(--border-color); 
+    border-right: none; /* Quitamos el borde derecho para que se "pegue" al botón visualmente */
+    border-radius: 30px 0 0 30px; /* Redondeamos solo la izquierda */
+    flex-grow: 1;
+    font-size: 1rem;
+    outline: none;
+    
+    /* Aseguramos los colores de fondo y texto correctos para el modo (Light/Dark) */
+    background-color: var(--bg-primary);
+    color: var(--text-color);
+    transition: border-color var(--transition-speed);
+}
+
+.subscription-form input:focus {
+    border-color: var(--primary-color);
+}
+
+.button-subscribe {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    border: 1px solid var(--primary-color); /* CLAVE: Añadir el borde para que se alinee con el input */
+    border-left: none; /* Quitamos el borde izquierdo para pegarlo al input */
+    padding: 15px 30px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    /* Ajuste de redondeo para que se vea como un conjunto */
+    border-radius: 0 30px 30px 0; /* Redondeamos solo la derecha */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+    /* Eliminamos el margen que hacía que se separaran */
+    /* margin-left: 10px; */ 
+}
+.button-subscribe:hover {
+    background-color: var(--primary-dark);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================================
+   7. Pie de Página (Footer)
+   ========================================= */
+.main-footer {
+    background-color: var(--bg-primary);
+    padding: 60px 40px 20px;
+}
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    gap: 30px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 40px;
+}
+.footer-column {
+    flex: 1;
+    min-width: 150px;
+}
+.footer-column h5 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+.footer-column ul {
+    list-style: none;
+}
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+.footer-column ul li a {
+    color: var(--text-subtle);
+    font-weight: 400;
+    font-size: 0.95rem;
+}
+.contact-button {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    padding: 12px 25px;
+    border-radius: 25px;
+    display: inline-block;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+.contact-button:hover {
+    background-color: var(--primary-dark);
+}
+.location select {
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+    appearance: none;
+    background: var(--bg-primary) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="%234A4A4A"><path d="M5 8l-3-3h6z"/></svg>') no-repeat right 15px center;
+    background-size: 10px;
+    min-width: 150px;
+}
+
+.social-media {
+    text-align: right;
+    margin-bottom: 20px;
+}
+.social-media a {
+    font-size: 1.8rem;
+    margin-left: 25px;
+    color: var(--text-subtle);
+}
+.social-media a:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+.footer-bottom p {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-subtle);
+}
+
+/* =========================================
+   8. Media Queries (Responsividad)
+   ========================================= */
+/* Tablet grande / Desktop pequeño */
+@media (max-width: 1200px) {
+    .header-actions {
+        gap: 15px;
+    }
+    .search-bar {
+        width: 300px;
+    }
+    .main-nav {
+        gap: 25px;
+        padding: 8px 0;
+    }
+    .hero-title {
+        font-size: 3rem;
+    }
+}
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 30px;
+    }
+    .search-bar {
+        width: 250px;
+    }
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .product-card {
+        flex: 0 0 250px;
+    }
+    .season-banners {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .season-card {
+        height: 300px;
+    }
+    .discount {
+        font-size: 4rem;
+    }
+    .subscription-form {
+        max-width: 450px;
+    }
+    .footer-columns {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .footer-column {
+        flex: 1 1 40%;
+        min-width: 200px;
+    }
+    .footer-column.location {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+    .social-media {
+        text-align: center;
+    }
+}
+
+/* Móvil (hasta 767px) */
+@media (max-width: 767px) {
+    .container {
+        padding: 0 20px;
+    }
+    /* Encabezado */
+    .header-top {
+        padding: 10px 0;
+    }
+    .logo {
+        font-size: 1.8rem;
+    }
+    .header-actions {
+        /* Oculta la barra de búsqueda y los iconos principales en el top bar */
+        display: none; 
+    }
+    /* Muestra el botón de menú */
+    .menu-toggle {
+        display: block;
+        font-size: 1.5rem;
+        padding: 5px;
+    }
+    .desktop-only {
+        display: none !important;
+    }
+    
+    /* Navegación (Menú móvil) */
+    .main-nav {
+        display: none; /* Ocultar por defecto */
+        flex-direction: column;
+        gap: 0;
+        border-top: none;
+        position: absolute;
+        top: 60px; /* Debajo del header-top */
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-primary);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+    }
+    .main-nav.active {
+        display: flex;
+    }
+    .main-nav a {
+        padding: 10px 20px;
+        text-align: center;
+        width: 100%;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .main-nav a:last-child {
+        border-bottom: none;
+    }
+    .main-nav a::after {
+        content: none; /* Quitar efecto hover de underline en móvil */
+    }
+
+    /* Hero */
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    .hero-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .hero-actions .button {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .category-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .category-card {
+        height: 200px;
+    }
+
+    /* Carrusel de Productos */
+    .product-card {
+        flex: 0 0 200px; /* Tarjetas más pequeñas */
+        margin-right: 15px; /* Espacio manual ya que el gap no funciona bien con scroll snap en todos los navegadores */
+    }
+    .product-carousel {
+        padding-left: 20px; /* Compensar el padding del container */
+        padding-right: 20px;
+        scroll-snap-type: x mandatory; /* Mejora el scroll en móvil */
+    }
+    .product-card {
+        scroll-snap-align: start;
+    }
+    .list-header h3 {
+        font-size: 1.8rem;
+    }
+
+    /* Banners y Suscripción */
+    .discount {
+        font-size: 3rem;
+    }
+    .jeans-banner {
+        height: 350px;
+    }
+    .jeans-banner .discount-large {
+        font-size: 6rem;
+    }
+    .subscription-form {
+        flex-direction: column;
+        border-radius: 10px;
+        padding: 0;
+        max-width: 90%;
+    }
+    .subscription-form input {
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+    }
+    .button-subscribe {
+        width: 100%;
+        border-radius: 0 0 10px 10px;
+        padding: 12px 30px;
+    }
+    
+    /* Footer */
+    .footer-columns {
+        flex-direction: column;
+        padding-bottom: 20px;
+    }
+    .footer-column {
+        flex: 1 1 100%;
+        min-width: unset;
+        text-align: center;
+    }
+    .contact-button {
+        width: 80%;
+    }
+    .footer-column ul {
+        margin-bottom: 20px;
+    }
+    .social-media {
+        text-align: center;
+    }
+}
